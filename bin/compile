@@ -21,7 +21,9 @@ download(){
 	EDITION=$1
 
 	TAR="$CACHE_DIR/$EDITION.tar.gz"
-	DB="$CACHE_DIR/$EDITION.mmdb"
+  echo "-------> $TAR"
+
+  DB="$CACHE_DIR/$EDITION.mmdb"
 	LAST="$CACHE_DIR/$EDITION.last"
 
 	if [ -f $DB ]; then
