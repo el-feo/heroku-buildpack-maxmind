@@ -21,7 +21,7 @@ download(){
 	EDITION=$1
 
 	TAR="$CACHE_DIR/$EDITION.tar.gz"
-  echo "-------> $TAR"
+  echo "------->>>> $TAR"
 
   DB="$CACHE_DIR/$EDITION.mmdb"
 	LAST="$CACHE_DIR/$EDITION.last"
@@ -45,6 +45,7 @@ download(){
 	if [ ! -f $DB ]; then
 		if [ ! -f $TAR ]; then
 			echo "-----> $EDITION: Database does not exist in cache, downloading."
+      echo "----->>>> https://download.maxmind.com/app/geoip_download?edition_id=${EDITION}&suffix=tar.gz&license_key=$MAXMIND_KEY"
 
 			curl -o $TAR -L "https://download.maxmind.com/app/geoip_download?edition_id=${EDITION}&suffix=tar.gz&license_key=$MAXMIND_KEY"
 		fi
